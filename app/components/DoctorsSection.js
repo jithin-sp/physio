@@ -27,34 +27,40 @@ const doctorsData = [
 export default function DoctorsSection({ doctors = doctorsData }) {
   return (
     <section 
-      className="bg-white py-12 px-4 sm:px-6 lg:py-20 lg:px-8"
+      className="bg-white py-12 px-4 sm:px-6 lg:py-16 lg:px-8"
       aria-labelledby="doctors-heading"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Heading */}
         <h2 
           id="doctors-heading"
-          className="text-[#395756] text-3xl sm:text-4xl font-bold text-center mb-8 lg:mb-12"
+          className="text-[#395756] text-3xl sm:text-4xl font-bold text-center mb-8 lg:mb-10"
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
-          Meet Our Doctors
+          Our Doctors
         </h2>
 
-        {/* Doctors Grid */}
+        {/* Horizontal Scroll Container */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="overflow-x-auto scrollbar-hide -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
           role="list"
         >
-          {doctors.map((doctor) => (
-            <div key={doctor.id} role="listitem">
-              <DoctorCard
-                name={doctor.name}
-                designation={doctor.designation}
-                image={doctor.image}
-                bio={doctor.bio}
-              />
-            </div>
-          ))}
+          <div className="flex gap-6 pb-4">
+            {doctors.map((doctor) => (
+              <div 
+                key={doctor.id} 
+                role="listitem"
+                className="flex-shrink-0 w-[280px] sm:w-[320px]"
+              >
+                <DoctorCard
+                  name={doctor.name}
+                  designation={doctor.designation}
+                  image={doctor.image}
+                  bio={doctor.bio}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

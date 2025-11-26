@@ -89,11 +89,30 @@ export default function VideoHero({
         aria-hidden="true" 
       />
 
-      {/* Overlay Text at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 pb-12 md:pb-16 px-4">
-        <h1 className="text-[2rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white text-center z-10" style={{ fontFamily: 'Playfair Display, serif' }}>
-          {overlayText}
-        </h1>
+      {/* Overlay Text Layout - Left Aligned, Stacked Vertically */}
+      <div className="absolute bottom-0 left-0 right-0 pb-12 md:pb-16 px-4 md:px-8 lg:px-16">
+        <div className="max-w-4xl">
+          {/* Heading */}
+          <h1 
+            className="text-[2rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white text-left mb-4 md:mb-6" 
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            {overlayText}
+          </h1>
+
+          {/* Book Appointment Button */}
+          <button
+            className="bg-transparent border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold hover:bg-white hover:text-black transition-all duration-300 mb-4 md:mb-6"
+            aria-label="Book an appointment"
+          >
+            Book Appointment
+          </button>
+          
+          {/* Description Paragraph */}
+          <p className="text-white text-base md:text-lg lg:text-xl text-left leading-relaxed">
+            Experience personalized physiotherapy care with our expert team. We combine advanced techniques with compassionate treatment to help you achieve lasting recovery and optimal wellness.
+          </p>
+        </div>
       </div>
     </section>
   );

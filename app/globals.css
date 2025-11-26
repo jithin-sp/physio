@@ -100,6 +100,16 @@ body {
   /* Theme #00C49A with White = 2.9:1 (use for large text only or with sufficient weight) */
 }
 
+/* Hide scrollbar for horizontal scroll sections */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
 /* Reduced motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
